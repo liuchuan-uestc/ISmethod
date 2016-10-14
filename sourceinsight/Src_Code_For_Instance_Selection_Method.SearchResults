@@ -1,0 +1,55 @@
+---- output Matches (54 in 5 files) ----
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):<li class="headlines_item"><a href="#f401">The output of training C-SVM is like the following. What do they mean?</a></li>
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):<li class="headlines_item"><a href="#f412">The program keeps running (without showing any output). What should I do?</a></li>
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):<li class="headlines_item"><a href="#f413">The program keeps running (with output, i.e. many dots). What should I do?</a></li>
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):<li class="headlines_item"><a href="#f417">How do I disable screen output of svm-train?</a></li>
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):<a name="f401"><b>Q: The output of training C-SVM is like the following. What do they mean?</b></a>
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):<a name="f412"><b>Q: The program keeps running (without showing any output). What should I do?</b></a>
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):<a name="f413"><b>Q: The program keeps running (with output, i.e. many dots). What should I do?</b></a>
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):<a name="f417"><b>Q: How do I disable screen output of svm-train?</b></a>
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):to specify the output format. You can disable the output by the following steps:
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):Declare a function to output nothing:
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):Assign the output function of libsvm by
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):<p>Any value is ok. In this situation, what you will use is the output file of svm-predict, which gives predicted class labels.
+FAQ.html (g:\src_code_for_instance_selection_method\src\svm):It seems the problem is caused by the screen output.
+Svm.java (g:\src_code_for_instance_selection_method\src\svm\libsvm):		// output SVs
+Svm.java (g:\src_code_for_instance_selection_method\src\svm\libsvm):			// build output
+Svm.java (g:\src_code_for_instance_selection_method\src\svm\libsvm):			return "one-class SVM probability output not supported yet";
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):	private static void predict(BufferedReader input, DataOutputStream output, svm_model model, int predict_probability) throws IOException
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes("labels");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):					output.writeBytes(" "+labels[j]);
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes("\n");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes(v+" ");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):					output.writeBytes(prob_estimates[j]+" ");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes("\n");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes(v+"\n");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):			DataOutputStream output = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(argv[i+2])));
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):			predict(input,output,model,predict_probability);
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):			output.close();
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):			DataOutputStream output = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(argv[i+2])));
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):			Accuracy = predict(FileMapVsm,output,model,predict_probability);
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):			output.close();
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):			DataOutputStream output = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(argv[i+2])));
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):			Accuracy = predict(FileMapVsm,output,model,predict_probability,actual,pred);
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):			output.close();
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):	private static double predict(Map<String, Map<Integer, Double>> FileMapVsm, DataOutputStream output, svm_model model, int predict_probability) throws IOException
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes("labels");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):					output.writeBytes(" "+labels[j]);
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes("\n");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes(v+" ");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):					output.writeBytes(prob_estimates[j]+" ");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes("\n");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes(v+"\n");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):	private static double predict(Map<String, Map<Integer, Double>> FileMapVsm, DataOutputStream output, svm_model model, int predict_probability, 
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes("labels");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):					output.writeBytes(" "+labels[j]);
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes("\n");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes(v+" ");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):					output.writeBytes(prob_estimates[j]+" ");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes("\n");
+Svm_predict.java (g:\src_code_for_instance_selection_method\src\svm):				output.writeBytes(v+"\n");
+Svm_scale.java (g:\src_code_for_instance_selection_method\src\svm):	private void output(int index, double value)
+Svm_scale.java (g:\src_code_for_instance_selection_method\src\svm):					output(i, 0);
+Svm_scale.java (g:\src_code_for_instance_selection_method\src\svm):				output(index, value);
+Svm_scale.java (g:\src_code_for_instance_selection_method\src\svm):				output(i, 0);
+Test.java (g:\src_code_for_instance_selection_method\src\reducemethod):				String SVM_test_argv  = "-m 1 VsmTFIDFMapTestSample"+j+" VsmTFIDFMapTrainSample"+j+".model "+"output"+j;
